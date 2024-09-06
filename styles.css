@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+  
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    --ff-base: "Barlow Semi Condensed", sans-serif;
+    
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --fs-paragraph: 13px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ff-base);
+    background-color: var(--light-gray);
+}
+
+.container{
+    display: grid;
+    gap: 2em;
+    padding: 1em;
+    margin: 1em;
+}
+
+section{
+    display: grid;
+    gap: 10px;
+    padding: 2em;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+section > .person{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-auto-rows: 1fr;
+    align-items: center;
+}
+
+.person > img{
+    grid-row: span 2;
+    margin-right: 1em;
+    border-radius: 50%;
+    max-width: 40px;
+}
+
+.person > h1{
+    font-size: 1.2em;
+    align-self: end;
+}
+
+.person > h2{
+    align-self: start;
+}
+
+.person > h2, section > p{
+    font-size: var(--fs-paragraph);
+    line-height: 1.5;
+    font-weight: var(--fw-500);
+}
+
+section > p span{
+    display: block;
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: var(--fw-600);
+}
+
+section:nth-child(1) > p,
+section:nth-child(2) > p,
+section:nth-child(4) > p{
+    color: var(--light-gray);
+}
+
+section:nth-child(3) > p,
+section:nth-child(5) > p{
+    color: var(--very-dark-blackish-blue);
+}
+
+section:nth-child(1) > p span,
+section:nth-child(2) > p span,
+section:nth-child(4) > p span{
+    color: white;
+}
+
+section:nth-child(3) > p span,
+section:nth-child(5) > p span{
+    color: var(--very-dark-blackish-blue);
+}
+
+
+/* setting the background colors */
+
+section:nth-child(1){
+    background-color: var(--moderate-violet);
+    position: relative;
+}
+
+section:nth-child(2){
+    background-color: var(--very-dark-grayish-blue);
+}
+
+section:nth-child(3){
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+}
+
+section:nth-child(4){
+    background-color: var(--very-dark-blackish-blue);
+}
+
+section:nth-child(5){
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+}
+
+/* inserting the quotation sign */
+section:nth-child(1)::before{
+    position: absolute;
+    content: url('images/bg-pattern-quotation.svg');
+    right: 1em;
+    top: 0;
+    font-size: 3em;
+    z-index: 1;
+    opacity: 50%;
+}
+
+/* to make the text visible over the ::before element */
+section:nth-child(1) > *{
+    z-index: 2;
+}
+
+/* media queries for desktop */
+@media (min-width: 1400px) {
+    .container{
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    section:nth-child(1){
+        grid-column: span 3;
+    }
+
+    section:nth-child(4){
+        grid-column: span 3;
+    }
+
+    section:nth-child(5){
+        grid-column: span 1 / -1;
+        grid-row: 1/ span 2;
+    }
+    
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
