@@ -61,7 +61,11 @@ section{
     display: grid;
     align-content: center;
     gap: 10px;
-    padding: 2em;
+
+    padding: 1.5em;
+
+    color: white;
+    
     border-radius: 10px;
 }
 
@@ -74,14 +78,17 @@ section > .person{
 
 .person > img{
     grid-row: span 2;
-    margin-right: 1em;
-    border-radius: 50%;
+
     max-width: 40px;
+    margin-right: 1em;
+
+    border-radius: 50%;
 }
 
 .person > h1{
-    font-size: 1.2em;
     align-self: end;
+
+    font-size: 1.2em;
 }
 
 .person > h2{
@@ -96,8 +103,10 @@ section > .person{
 
 section > p span{
     display: block;
-    font-size: 2em;
+
     margin-bottom: 1em;
+
+    font-size: 2em;
     font-weight: var(--fw-600);
 }
 
