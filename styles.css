@@ -59,9 +59,9 @@ body{
 
 section{
     display: grid;
+    align-content: center;
     gap: 10px;
     padding: 2em;
-    color: var(--white);
     border-radius: 10px;
 }
 
