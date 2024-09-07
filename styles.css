@@ -68,7 +68,7 @@ section{
 section > .person{
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-auto-rows: 1fr;
+    grid-auto-rows: auto;
     align-items: center;
 }
 
